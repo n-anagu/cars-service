@@ -7,6 +7,7 @@ import { Car } from '../models/car';
   styleUrls: ['./cars-list.component.less']
 })
 export class CarsListComponent implements OnInit {
+  totalCost: number;
 
   cars: Array<Car> = [
     {
@@ -52,5 +53,13 @@ export class CarsListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.countTotalCost();
+  }
+
+  countTotalCost(): void {
+    this.totalCost = this.cars
+      .map(car => car.cost)
+      .reduce((prev, next) => prev + next);
+  }
 }
