@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <table class="cars-service-table table table-striped">
+      <table
+        *ngIf="cars.length > 0; else noCarsInfo"
+        class="cars-service-table table table-striped"
+      >
         <thead>
           <tr>
             <th>car</th>
@@ -27,6 +30,11 @@
           </tr>
         </tbody>
       </table>
+      <ng-template #noCarsInfo>
+        <div class="no-cars-info">
+          <p>Currently no cars in service</p>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>
