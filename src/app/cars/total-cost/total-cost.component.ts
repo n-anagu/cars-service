@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'total-cost',
+  selector: 'app-total-cost',
   templateUrl: './total-cost.component.html',
   styleUrls: ['./total-cost.component.less']
 })
