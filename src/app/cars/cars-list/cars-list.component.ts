@@ -23,7 +23,7 @@ export class CarsListComponent implements OnInit {
     this.carsService.getCars().subscribe((cars) => {
       this.cars = cars;
       this.countTotalCost();
-    })
+    });
   }
 
   countTotalCost(): void {
