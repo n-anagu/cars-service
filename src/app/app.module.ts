@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CarsModule } from './cars/cars.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core-module/core.module';
+import { RouterModule } from '@angular/router';
+import { CarsListComponent } from './cars/cars-list/cars-list.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +15,8 @@ import { CoreModule } from './core-module/core.module';
     HttpClientModule,
     AppRoutingModule,
     CarsModule,
-    CoreModule
+    CoreModule,
+    RouterModule.forRoot([{ path: 'cars', component: CarsListComponent }])
   ],
   providers: [],
   bootstrap: [AppComponent]
