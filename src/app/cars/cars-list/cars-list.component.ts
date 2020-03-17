@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../models/car';
 import { CarsService } from '../cars.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cars-list',
@@ -13,7 +14,7 @@ export class CarsListComponent implements OnInit {
   grossCost: number;
   cars: Array<Car>;
 
-  constructor(private carsService: CarsService) {}
+  constructor(private carsService: CarsService, private router: Router) {}
 
   ngOnInit() {
     this.loadCars();
@@ -24,6 +25,10 @@ export class CarsListComponent implements OnInit {
       this.cars = cars;
       this.countTotalCost();
     });
+  }
+
+  goToCarDetails(car: Car): void {
+    this.router.navigate(['/cars', car.id]);
   }
 
   countTotalCost(): void {
