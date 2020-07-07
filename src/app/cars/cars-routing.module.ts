@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CarDetailsComponent } from './car-details/car-details.component';
-import {CarsResolveService} from "./cars-resolve.service";
+import { CarsResolveService } from './cars-resolve.service';
 
 const carsRoutes: Routes = [
   { path: 'cars/:id',
