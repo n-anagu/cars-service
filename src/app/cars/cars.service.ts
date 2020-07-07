@@ -12,14 +12,32 @@ export class CarsService {
 
   constructor(private http: HttpClient) {}
 
-  getCars(): Observable<Array<Car>> {
+  public getCars(): Observable<Array<Car>> {
     return this.http.get(this.apiUrl).pipe(map((res: Array<Car>) => {
       return res;
     }));
   }
 
-  getCar(id: number): Observable<Car> {
+  public getCar(id: number): Observable<Car> {
     return this.http.get(`${this.apiUrl}/${id}`).pipe(map((res: Car) => {
+      return res;
+    }));
+  }
+
+  public addCar(data: Car): Observable<Car> {
+    return this.http.post(`${this.apiUrl}`, data).pipe(map((res: Car) => {
+      return res;
+    }));
+  }
+
+  public updateCar(id: number, data: Car): Observable<Car> {
+    return this.http.put(`${this.apiUrl}/${id}`, data).pipe(map((res: Car) => {
+      return res;
+    }));
+  }
+
+  public removeCar(id: number): Observable<Car> {
+    return this.http.delete(`${this.apiUrl}/${id}`).pipe(map((res: Car) => {
       return res;
     }));
   }
